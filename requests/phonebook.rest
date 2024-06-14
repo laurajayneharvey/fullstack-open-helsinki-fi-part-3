@@ -11,8 +11,38 @@ GET http://localhost:3001/api/persons/2
 ###
 
 # request to get a person outside of data
-GET http://localhost:3001/api/persons/0
+GET http://localhost:3001/api/persons/-1
 
 ###
 
 DELETE http://localhost:3001/api/persons/2
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Alan Turing2",
+    "number": "23-06-12070654"
+}
+
+### request with empty name
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "",
+    "number": "23-06-12070654"
+}
+
+### request with non-unique name
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "050-123456"
+}
