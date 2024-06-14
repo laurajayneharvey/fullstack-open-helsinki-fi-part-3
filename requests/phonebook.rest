@@ -8,9 +8,8 @@ GET http://localhost:3001/api/info
 
 GET http://localhost:3001/api/persons/2
 
-###
+### id not in data
 
-# request to get a person outside of data
 GET http://localhost:3001/api/persons/-1
 
 ###
@@ -23,11 +22,21 @@ POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Alan Turing2",
+    "name": "Alan Turing",
     "number": "23-06-12070654"
 }
 
-### request with empty name
+### empty number
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Alan Turing",
+    "number": ""
+}
+
+### empty name
 
 POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
@@ -37,7 +46,7 @@ content-type: application/json
     "number": "23-06-12070654"
 }
 
-### request with non-unique name
+### non-unique name
 
 POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
