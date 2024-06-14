@@ -6,4 +6,13 @@ GET http://localhost:3001/api/info
 
 ###
 
-http://localhost:3001/api/persons/2
+GET http://localhost:3001/api/persons/2
+
+###
+
+# request to get a person outside of data
+GET http://localhost:3001/api/persons/0
+
+###
+
+DELETE http://localhost:3001/api/persons/2
